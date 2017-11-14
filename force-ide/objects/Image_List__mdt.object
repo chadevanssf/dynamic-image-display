@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Image List</label>
+    <pluralLabel>Images List</pluralLabel>
+    <visibility>Public</visibility>
     <fields>
         <fullName>Image_Config__c</fullName>
         <externalId>false</externalId>
@@ -9,7 +12,4 @@
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
-    <label>Image List</label>
-    <pluralLabel>Images List</pluralLabel>
-    <visibility>Public</visibility>
 </CustomObject>

@@ -16,6 +16,14 @@
 
 A Lightning Component to respond to real time Platform Events to have a real-time display of status.
 
+Deploy using SFDX, click the button below:
+
+[![Deploy](https://deploy-to-sfdx.com/dist/assets/images/DeployToSFDX.svg)](https://deploy-to-sfdx.com/deploy?template=https://github.com/chadevanssf/dynamic-image-display)
+
+Deploy via Metadata API, click the button below
+
+<a href="https://githubsfdeploy.herokuapp.com"><img alt="Deploy to Salesforce"         src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png"></a>
+
 ## Sample use case
 
 After a routine servicing of a connected machine, an access panel is left open. The machine's sensors notice the door is not fully closed, and sends out a status that the door is open. IoT Explorer receives that message, and changes the status of the Asset in SF that the door is open. On the Asset record in SF, the image of the machine is dynamically updated, without having to refresh the page or record, that the door is open.
@@ -45,6 +53,7 @@ After a routine servicing of a connected machine, an access panel is left open. 
   * Channel is of the form "/event/Event__E"
   * Use the target object developer field name from above (e.g. DisplayStatus__c)
   * As appropriate, use the filter field info from the message and target object
+1. No
 
 ## Example values
 
