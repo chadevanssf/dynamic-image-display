@@ -1,0 +1,9 @@
+<design:component >
+	<design:attribute name="title" label="Title" description="Title of the Component" />
+	<design:attribute name="fieldName" label="Object Field Name" description="Used to init the image, something of the form '{'top':'show','bottom':'hide'}'" />
+	<design:attribute name="configName" label="Metadata Type Entry" description="Metadata Type Entry for the Configuration of the images, under 'Image List' . 'Image List Name'" />
+    <design:attribute name="channel" label="Event Channel" description="Indicates the channel to listen to, somethign like '/event/MyEvent__e'" />
+    <design:attribute name="payloadFieldName" label="Payload Field Name" description="Indicates the payload field for the event, like 'Message__c'" />
+    <design:attribute name="filterIdFieldName" label="Filter Id Field Name" description="Indicates the Id to use to filter the events, like 'AssetId__c'" />
+    <design:attribute name="filterPayloadFieldName" label="Payload Field Name" description="Indicates the payload field to match for filtering the event, like 'AssetId__c'" />
+</design:component>
