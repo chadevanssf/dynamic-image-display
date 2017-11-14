@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Image_Status__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Image_Status__cs.json"
+        ]
+    }
+]

@@ -31,6 +31,7 @@
                     config.forEach(function (item) {
                         var layerName = item.layername;
                         var imageLocation = item.image;
+                        var archiveLocation = item.archive;
                         var combined = "layer_" + layerName;
                         var classInfo = "slds-float_left layer " + combined;
                         if (layerName === "base") {
@@ -38,7 +39,7 @@
                         } else {
                             classInfo += " hide"
                         }
-                        helper.addImageElement(component, combined, classInfo, imageLocation, helper.updateStatus);
+                        helper.addImageElement(component, combined, classInfo, imageLocation, archiveLocation, helper.updateStatus);
                     }); // forEach
                 }
             }  else if (state === "ERROR") {

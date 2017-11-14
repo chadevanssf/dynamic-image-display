@@ -1,0 +1,1 @@
+SELECT Id, Display_Status__c FROM Image_Status__c

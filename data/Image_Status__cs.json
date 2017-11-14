@@ -1,0 +1,11 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Image_Status__c",
+                "referenceId": "Image_Status__cRef1"
+            },
+            "Display_Status__c": "{ \"left\": \"show\", \"right\": \"hide\" }"
+        }
+    ]
+}

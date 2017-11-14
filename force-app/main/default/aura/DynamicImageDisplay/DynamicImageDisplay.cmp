@@ -32,20 +32,22 @@
                       recordUpdated="{!c.recordUpdated}"
                       mode="VIEW"/>
     
-    <!--<lightning:card>
+    <lightning:card >
         <aura:set attribute="title">
             {!v.title}
-        </aura:set>-->
-        <lightning:tile >
-            <aura:if isTrue="{!not(empty(v.recordError))}">
-                <div class="recordError">
-                    <ui:message title="Error" severity="error" closable="true">
-                        {!v.recordError}
-                    </ui:message>
+        </aura:set>
+        <div class="slds-card__body--inner">
+            <lightning:tile >
+                <aura:if isTrue="{!not(empty(v.recordError))}">
+                    <div class="recordError">
+                        <ui:message title="Error" severity="error" closable="true">
+                            {!v.recordError}
+                        </ui:message>
+                    </div>
+                </aura:if>
+                <div class="slds-clearfix" aura:id="images">
                 </div>
-            </aura:if>
-            <div class="slds-clearfix" aura:id="images">
-            </div>
-        </lightning:tile>
-    <!--</lightning:card>-->
+            </lightning:tile>
+        </div>
+    </lightning:card>
 </aura:component>
