@@ -1,3 +1,17 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [dynamic-image-display](#dynamic-image-display)
+	- [Sample use case](#sample-use-case)
+	- [Use](#use)
+	- [Example values](#example-values)
+	- [Testing](#testing)
+		- [Dynamically change the image](#dynamically-change-the-image)
+		- [Import the data](#import-the-data)
+		- [Export the data](#export-the-data)
+	- [Resources](#resources)
+
+<!-- /TOC -->
+
 # dynamic-image-display
 
 A Lightning Component to respond to real time Platform Events to have a real-time display of status.
@@ -19,44 +33,48 @@ After a routine servicing of a connected machine, an access panel is left open. 
     * Might be a **Text** or **Long Text Area**
   * Stores the state of the various layers from the configuration
     * Is a JSON Object, of name-value pairs; name is the layername, value is whether to hide the layer or not
-    * Ex:
-    ```
-    {
-      "error": "show",
-      "warning": "hide"
-    }
-    ```
 1. Add a new entry to the Custom Metadata Type **Image List**
   * Repository already contains the **Image List** custom metadata type
-  * **Image List Name** is the developer name for this entry, used in the setting of the component
+  * **Image List Name** is the developer name for this entry, used in the settings of the component
   * **Image Config** is the actual set of layers to use in the component
     * Is a JSON Object Array, each JSON Object represents the layer and associated image to load into that layer
     * Can also leverage an archive, see example below (resource name if no archive, with archive you need a root '/' before path and name)
-    * Ex:
-    ```
-    [
-      {
-        "layername": "base",
-        "image": "image_base"
-      },
-      {
-        "layername": "error",
-        "image": "/image_error",
-        "archive": "images"
-      },
-      {
-        "layername": "warning",
-        "image": "/image_warning",
-        "archive": "images"
-      }
-    ]
-    ```
     * **base** is a special layer name, typically always shown, the only layer that is defaulted to "show", all others are defaulted to "hide"
 1. Modify the Record Page for the target object from above to show this component.
   * Suggested first use is on the right sidebar
   * Channel is of the form "/event/Event__E"
   * Use the target object developer field name from above (e.g. DisplayStatus__c)
   * As appropriate, use the filter field info from the message and target object
+
+## Example values
+
+* Source object status field
+  ```
+  {
+    "error": "show",
+    "warning": "hide"
+  }
+  ```
+* Custom Metadata Type value
+  ```
+  [
+    {
+      "layername": "base",
+      "image": "image_base"
+    },
+    {
+      "layername": "error",
+      "image": "/image_error",
+      "archive": "images"
+    },
+    {
+      "layername": "warning",
+      "image": "/image_warning",
+      "archive": "images"
+    }
+  ]
+  ```
+
 ## Testing
 
 Sample configuration and data are provided to show how this all works together.
