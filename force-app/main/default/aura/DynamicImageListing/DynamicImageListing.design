@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="sObject" label="Object Name" description="Object Name, API version (with __c)" required="true"/>
+    <design:attribute name="fieldNames" label="Field Name" description="Field Names, API version (with __c)" required="true"/>
+</design:component>

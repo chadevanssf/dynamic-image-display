@@ -41,6 +41,11 @@ After a routine servicing of a connected machine, an access panel is left open. 
     * Might be a **Text** or **Long Text Area**
   * Stores the state of the various layers from the configuration
     * Is a JSON Object, of name-value pairs; name is the layername, value is whether to hide the layer or not
+1. Configure the Images
+  * Consist of the "base" layer that is always displayed
+  * Leveraging PNG and transparency, each layer can show an image overlay on the base, or over any other visible layers
+  * Recommend that each layer has the same dimensions as the base layer
+  * The associated image files show how this might work
 1. Add a new entry to the Custom Metadata Type **Image List**
   * Repository already contains the **Image List** custom metadata type
   * **Image List Name** is the developer name for this entry, used in the settings of the component
@@ -104,6 +109,7 @@ EventBus.publish(evts);
 ### Import the data
 
 ```
+sfdx force:user:permset:assign -n Dynamic_Image_Display
 sfdx force:data:tree:import -p ./data/Image_Status__c-plan.json
 ```
 

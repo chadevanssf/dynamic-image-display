@@ -21,6 +21,10 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Dynamic_Image_List</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Image_Status__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

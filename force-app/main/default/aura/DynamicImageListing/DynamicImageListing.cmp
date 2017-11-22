@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="DynamicImageListingCtrl" access="global">
+    <!-- public -->
+    <aura:attribute name="sObject" type="String" required="true" access="global"/>
+    <aura:attribute name="fieldNames" type="String" required="true" access="global"/>
+    
+    <!-- private -->
+    <aura:attribute name="results" type="object[]" access="private"/>
+    
+    <!-- events -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="selectSObject" event="c:SelectTableRow" action="{!c.selectObject}" />
+    
+    <div class="container">
+        <lightning:layout horizontalAlign="space" multipleRows="true">
+            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="8" flexibility="auto">
+                <lightning:card >
+                    <aura:set attribute="title">
+                        Record List
+                    </aura:set>
+                    <p class="slds-p-horizontal_small">
+                        <ui:scrollerWrapper >
+                            <c:LightningDataTable aura:id="tableData"
+                                                  results="{!v.results}"
+                                                  displayFields="{!v.fieldNames}"
+                                                  editableFields=""
+                                                  sObjectType="{!v.sObject}"/>
+                        </ui:scrollerWrapper>
+                    </p>
+                </lightning:card>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="4" flexibility="auto">
+                <c:DynamicImageDisplay aura:id="imageStatus"
+                                       title="Current Record"
+                                       fieldName="Display_Status__c"
+                                       configName="TestConfig"
+                                       channel="/event/TestEvent__e"
+                                       payloadFieldName="Message__c"
+                                       filterIdFieldName=""
+                                       filterPayloadFieldName="" />
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>
