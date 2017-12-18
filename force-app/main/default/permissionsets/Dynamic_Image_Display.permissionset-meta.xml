@@ -6,6 +6,11 @@
     </applicationVisibilities>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Image_Status_Detail__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Image_Status__c.Display_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -17,11 +22,24 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
+        <object>Image_Status_Detail__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Image_Status__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
         <tab>Dynamic_Image_List</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Image_Status_Detail__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

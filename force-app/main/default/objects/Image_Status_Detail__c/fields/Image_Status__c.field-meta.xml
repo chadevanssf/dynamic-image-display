@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Image_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Image Status</label>
+    <referenceTo>Image_Status__c</referenceTo>
+    <relationshipLabel>Image Status Details</relationshipLabel>
+    <relationshipName>Image_Status_Details</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
