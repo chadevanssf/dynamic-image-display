@@ -1,0 +1,18 @@
+[
+    {
+        "sobject": "Image_Status__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Image_Status__cs.json"
+        ]
+    },
+    {
+        "sobject": "Image_Status_Detail__c",
+        "saveRefs": false,
+        "resolveRefs": true,
+        "files": [
+            "Image_Status_Detail__cs.json"
+        ]
+    }
+]

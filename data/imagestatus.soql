@@ -1,1 +1,3 @@
-SELECT Id, Display_Status__c FROM Image_Status__c
+SELECT Id, Display_Status__c,
+(SELECT Id, Status__c FROM Image_Status_Details__r)
+FROM Image_Status__c

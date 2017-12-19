@@ -1,4 +1,4 @@
-<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="DynamicImageDisplayController" access="global" >
+<aura:component implements="flexipage:availableForRecordHome,flexipage:availableForAllPageTypes,force:hasRecordId" controller="DynamicImageDisplayController" access="global" >
     <!-- public -->
     <aura:attribute name="title" type="String" required="false" access="public" />
     <aura:attribute name="fieldName" type="String" default="ImageUrl__c" required="true" access="public" />
@@ -20,6 +20,7 @@
     <!-- events -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler name="change" value="{!v.recordId}" action="{!c.changeRecord}"/>
+    <aura:handler event="ltng:selectSObject" action="{!c.handleRecordChange}" />
 
     <c:streaming channel="{!v.channel}" onStart="{!c.handleStart}" onMessage="{!c.handleMessage}"/>
 

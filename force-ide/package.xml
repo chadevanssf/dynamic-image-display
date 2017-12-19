@@ -6,14 +6,25 @@
   </types>
   <types>
     <name>AuraDefinitionBundle</name>
+    <members>AutomaticLightningDataTable</members>
     <members>DynamicImageDisplay</members>
+    <members>DynamicImageListing</members>
+    <members>LightningDataTable</members>
+    <members>SingleFieldDisplayerReadOnly</members>
+    <members>handleCallbackError</members>
     <members>streaming</members>
     <members>streamingEvent</members>
+    <members>streamingStart</members>
   </types>
   <types>
     <name>ApexClass</name>
+    <members>AvailableMDT</members>
     <members>DynamicImageDisplayController</members>
     <members>DynamicImageDisplayTest</members>
+    <members>DynamicImageListingCtrl</members>
+    <members>DynamicImageListingCtrlTest</members>
+    <members>Ora</members>
+    <members>OraTest</members>
     <members>SessionController</members>
     <members>SessionControllerTest</members>
   </types>
@@ -24,23 +35,37 @@
   <types>
     <name>FlexiPage</name>
     <members>Dynamic_Image_Display_UtilityBar</members>
+    <members>Dynamic_Image_List</members>
     <members>Image_Status_Record_Page</members>
+  </types>
+  <types>
+    <name>FlowDefinition</name>
+    <members>TestProcessBuilder</members>
+  </types>
+  <types>
+    <name>Flow</name>
+    <members>TestProcessBuilder-1</members>
   </types>
   <types>
     <name>Layout</name>
     <members>Image_List__mdt-Image List Layout</members>
+    <members>Image_Status_Detail__c-Image Status Detail Layout</members>
     <members>Image_Status__c-Image Status Layout</members>
   </types>
   <types>
     <name>CustomObject</name>
     <members>Image_List__mdt</members>
+    <members>Image_Status_Detail__c</members>
     <members>Image_Status__c</members>
     <members>TestEvent__e</members>
   </types>
   <types>
     <name>CustomField</name>
     <members>Image_List__mdt.Image_Config__c</members>
+    <members>Image_Status_Detail__c.Image_Status__c</members>
+    <members>Image_Status_Detail__c.Status__c</members>
     <members>Image_Status__c.Display_Status__c</members>
+    <members>TestEvent__e.FilterId__c</members>
     <members>TestEvent__e.Message__c</members>
   </types>
   <types>
@@ -51,10 +76,45 @@
     <name>StaticResource</name>
     <members>cometd</members>
     <members>images</members>
+    <members>lodash</members>
   </types>
   <types>
     <name>CustomTab</name>
+    <members>Dynamic_Image_List</members>
+    <members>Image_Status_Detail__c</members>
     <members>Image_Status__c</members>
+  </types>
+  <types>
+    <name>Workflow</name>
+    <members>Image_Status_Detail__c</members>
+  </types>
+  <types>
+    <name>WorkflowFieldUpdate</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowKnowledgePublish</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowTask</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowAlert</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowSend</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowOutboundMessage</name>
+    <members>*</members>
+  </types>
+  <types>
+    <name>WorkflowRule</name>
+    <members>*</members>
   </types>
   <version>41.0</version>
 </Package>

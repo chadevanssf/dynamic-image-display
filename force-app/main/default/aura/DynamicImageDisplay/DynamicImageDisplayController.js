@@ -69,6 +69,13 @@
             helper.updateStatus(component);
         }
     },
+    
+    handleRecordChange : function(component, event, helper) {
+        var id = event.getParam("recordId");
+        component.set("v.recordId", id);
+        var rec = component.find("record");
+        rec.reloadRecord();
+    },
 
     handleStart : function(component, event, helper) {
         var live = component.find("live");

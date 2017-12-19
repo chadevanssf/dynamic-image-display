@@ -1,0 +1,12 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Image_Status_Detail__c",
+                "referenceId": "Image_Status_Detail__cRef1"
+            },
+            "Status__c": "Inactive",
+            "Image_Status__c": "@Image_Status__cRef2"
+        }
+    ]
+}

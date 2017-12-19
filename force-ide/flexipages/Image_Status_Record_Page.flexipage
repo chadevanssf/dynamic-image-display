@@ -24,6 +24,21 @@
         <componentInstances>
             <componentName>force:detailPanel</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>parentFieldApiName</name>
+                <value>Image_Status__c.Id</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListApiName</name>
+                <value>Image_Status_Details__r</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>relatedListComponentOverride</name>
+                <value>NONE</value>
+            </componentInstanceProperties>
+            <componentName>force:relatedListSingleContainer</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>detailTabContent</name>
         <type>Facet</type>
@@ -87,9 +102,11 @@
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>filterIdFieldName</name>
+                <value>Name</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>filterPayloadFieldName</name>
+                <value>FilterId__c</value>
             </componentInstanceProperties>
             <componentInstanceProperties>
                 <name>payloadFieldName</name>

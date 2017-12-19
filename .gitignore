@@ -1,6 +1,7 @@
 .classpath
 .DS_Store
 .sfdx
+.vscode
 .project
 .salesforce
 node_modules

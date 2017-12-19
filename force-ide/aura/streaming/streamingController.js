@@ -1,8 +1,10 @@
 ({
-    doInit: function(component, event, helper) {
+    doInit: function(component) {//, event, helper) {
+        var origCnsl = component.get("v.consoleStuff");
+        origCnsl = "Config Started.";
+        component.set("v.consoleStuff", origCnsl);
         var action = component.get("c.getSessionId");
         action.setCallback(this, function(response) {
-        
             // Configure CometD
             var sessionId = response.getReturnValue();
             var cometd = new window.org.cometd.CometD();
@@ -13,19 +15,29 @@
             });
             cometd.websocketEnabled = false;
 
-            // Connect to 
+            origCnsl = component.get("v.consoleStuff");
+            origCnsl += "\nConfig done.";
+            component.set("v.consoleStuff", origCnsl);
+            var messageEvent = component.getEvent("onStart");
+            messageEvent.fire();
+
+            // Connect to
             cometd.handshake($A.getCallback(function(status) {
                 if (status.successful) {
                     var eventName = component.get("v.channel");
                     cometd.subscribe(eventName, $A.getCallback(function(message) {
-                            var messageEvent = component.getEvent("onMessage");
-                            messageEvent.setParam("payload", message.data.payload);
-                            messageEvent.fire();
-                        }
-                    ));
+
+                        var cnsl = component.get("v.consoleStuff");
+                        cnsl += "\nHeard another message";
+                        component.set("v.consoleStuff", cnsl);
+
+                        var messageEvent = component.getEvent("onMessage");
+                        messageEvent.setParam("payload", message.data.payload);
+                        messageEvent.fire();
+                    }));
                 } else {
-                    // TODO: Handle errors 
-                    console.log(status);
+                    // TODO: Handle errors
+                    //console.log(status);
                 }
             }));
 

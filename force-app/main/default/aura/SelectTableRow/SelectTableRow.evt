@@ -1,3 +1,0 @@
-<aura:event type="COMPONENT" description="Selecting a Table Row" >
-    <aura:attribute name="recordId" type="String" access="global" />
-</aura:event>
