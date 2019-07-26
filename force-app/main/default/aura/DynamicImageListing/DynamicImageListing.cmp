@@ -4,7 +4,10 @@
     <aura:attribute name="fieldNames" type="String" required="true" access="global"/>
     
     <!-- private -->
-    <aura:attribute name="results" type="object[]" access="private"/>
+    <aura:attribute name="results" type="Object" access="private"/>
+    <aura:attribute name="selectedResults" type="Object" access="private"/>
+    <aura:attribute name="columns" type="List" access="private"/>
+    <aura:attribute name="fieldTypes" type="Object" access="private"/>
     
     <!-- events -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
@@ -20,11 +23,17 @@
                                                            results="{!v.results}"
                                                            displayFields="{!v.fieldNames}"
                                                            sObjectType="{!v.sObject}"/>-->
-                <c:LightningDataTable aura:id="tableData"
+                <!--<c:LightningDataTable aura:id="tableData"
                                       results="{!v.results}"
                                       displayFields="{!v.fieldNames}"
                                       editableFields=""
-                                      sObjectType="{!v.sObject}"/>
+                                      sObjectType="{!v.sObject}"/>-->
+                <lightning:datatable aura:id="listing"
+                                     data="{!v.results}"
+                                     columns="{!v.columns}"
+                                     keyField="id"
+                                     maxRowSelection="1"
+                                     onrowselection="{!c.handleSelection}" />
             </ui:scrollerWrapper>
         </p>
     </lightning:card>

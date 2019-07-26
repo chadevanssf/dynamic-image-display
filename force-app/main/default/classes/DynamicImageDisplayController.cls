@@ -1,6 +1,6 @@
 public class DynamicImageDisplayController {
 
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static String getConfig(String configName)
     {
         List<Image_List__mdt> recs = [SELECT Id, DeveloperName, Image_Config__c
