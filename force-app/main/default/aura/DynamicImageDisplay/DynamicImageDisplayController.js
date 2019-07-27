@@ -84,6 +84,7 @@
                     component.set("v.config", config);
                     
                     helper.addImages(component, config);
+                    helper.updateStatus(component);
                 }
             }  else if (state === "ERROR") {
                 $A.log(resp.getError());
