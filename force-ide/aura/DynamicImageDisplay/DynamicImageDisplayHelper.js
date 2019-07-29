@@ -1,38 +1,35 @@
 ({
-    addImageElement : function(component, id, className, imgLoc, archLoc, us) {
-        var newSrc = "";
-        if (archLoc && archLoc !== "") {
-            newSrc = $A.get('$Resource.' + archLoc) + imgLoc;
-        } else {
-            newSrc = $A.get('$Resource.' + imgLoc);
-        }
-        $A.createComponent(
-            "aura:HTML",
-            { // options
-                tag: "img",
-                HTMLAttributes: {
-                    "id": id,
-                    "aura:id": id,
-                    "class": className,
-                    "src": newSrc
-                }
-            },
-            function(newComp){
-                var container = component.find("images");
-                if (container.isValid()) {
-                    
-                    var body = container.get("v.body");
-                    body.push(newComp);
-                    container.set("v.body", body);
-                    
-                    var dynamicComponentsByAuraId = component.get("v.dynamicComponentsByAuraId");
-                    dynamicComponentsByAuraId[id] = newComp;
-                    component.set("v.dynamicComponentsByAuraId", dynamicComponentsByAuraId);
-                    
-                    us(component);
-                }
+    addImages : function(component, config) {
+        var imagedata = [];
+        
+        for (var item of config) {
+            var layerName = item.layername;
+            var imageLocation = item.image;
+            var archiveLocation = item.archive;
+            var combined = "layer_" + layerName;
+            var classInfo = "slds-float_left layer " + combined;
+            if (layerName === "base") {
+                classInfo += " show";
+            } else {
+                classInfo += " hide";
             }
-        );
+            
+            var newSrc = "";
+            if (archiveLocation && archiveLocation !== "") {
+                newSrc = $A.get('$Resource.' + archiveLocation) + imageLocation;
+            } else {
+                newSrc = $A.get('$Resource.' + imageLocation);
+            }
+            
+            var imgitem = {
+                id: combined,
+                class: classInfo,
+                src: newSrc
+            };
+            imagedata.push(imgitem);
+        }; // forEach
+        
+        component.set("v.imagedata", imagedata);
     },
     
     updateStatus : function(component) {
@@ -40,23 +37,19 @@
         if (currentStatus) {
             var status = JSON.parse(currentStatus);
             
-            for (var s in status) {
-                if (status.hasOwnProperty(s)) {
-                    var compName = "layer_" + s;
-                    // work around for W-2529066, can't find dynamically created component
-                    //var img = component.find(compName);
-                    var dynamicComponentsByAuraId = component.get("v.dynamicComponentsByAuraId");
-                    if (dynamicComponentsByAuraId) {
-                        var img = dynamicComponentsByAuraId[compName];
-                        if (img) {
-                            if (status[s] === "hide") {
-                                $A.util.addClass(img, "hide");
-                                $A.util.removeClass(img, "show");
-                            } else {
-                                $A.util.addClass(img, "show");
-                                $A.util.removeClass(img, "hide");
-                            }
-                        }
+            var images = component.find("allimages");
+            var startPos = "layer_".length;
+            
+            if (images) {
+                for (var img of images) {
+                    var currId = img.getElement().id;
+                    var layerName = currId.slice(startPos);
+                    if (status[layerName] === "hide") {
+                        $A.util.addClass(img, "hide");
+                        $A.util.removeClass(img, "show");
+                    } else {
+                        $A.util.addClass(img, "show");
+                        $A.util.removeClass(img, "hide");
                     }
                 }
             }

@@ -15,14 +15,15 @@
     <aura:attribute name="record" type="Object" description="The record object to be displayed" access="private"/>
     <aura:attribute name="simpleRecord" type="Object" description="A simplified view record object to be displayed" access="private" />
     <aura:attribute name="recordError" type="String" description="An error message bound to force:recordData" access="private" />
-    <aura:attribute name="dynamicComponentsByAuraId" type="Object" access="private" />
+    <aura:attribute name="imagedata" type="Object" access="private" />
+    <aura:attribute name="subscription" type="Map" access="private" />
 
     <!-- events -->
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler name="change" value="{!v.recordId}" action="{!c.changeRecord}"/>
     <aura:handler event="ltng:selectSObject" action="{!c.handleRecordChange}" />
 
-    <c:streaming channel="{!v.channel}" onStart="{!c.handleStart}" onMessage="{!c.handleMessage}"/>
+    <lightning:empApi aura:id="empApi" />
 
     <force:recordData aura:id="record"
                       fields="{!v.fieldNames}"
@@ -40,7 +41,7 @@
             <lightning:badge aura:id="live" label="Offline" class="slds-float_right slds-theme_offline" />
         </aura:set>
         <div class="slds-card__body--inner">
-            <lightning:tile >
+            <lightning:tile>
                 <aura:if isTrue="{!not(empty(v.recordError))}">
                     <div class="recordError">
                         <ui:message title="Error" severity="error" closable="true">
@@ -49,6 +50,9 @@
                     </div>
                 </aura:if>
                 <div class="slds-clearfix" aura:id="images">
+                    <aura:iteration items="{!v.imagedata}" var="item">
+                        <img aura:id="allimages" id="{!item.id}" class="{!item.class}" src="{!item.src}"/>
+                    </aura:iteration>
                 </div>
             </lightning:tile>
         </div>

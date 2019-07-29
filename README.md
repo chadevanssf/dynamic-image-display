@@ -42,7 +42,7 @@ After a routine servicing of a connected machine, an access panel is left open. 
 
 ### Install
 
-Install the component, custom metadata type, and streamer component from the repository
+Install the component and custom metadata type from the repository
 
 ### Platform Event Creation/Re-use
 
@@ -67,10 +67,10 @@ Install the component, custom metadata type, and streamer component from the rep
 
 ### Custom Metadata Type Entry
 
-Add a new entry to the Custom Metadata Type **Image List**
+Add a new entry to the Custom Metadata Type **Dynamic Image Display**
 
-- Repository already contains the **Image List** custom metadata type
-- **Image List Name** is the developer name for this entry, used in the settings of the component
+- Repository already contains the **Dynamic Image Display** custom metadata type
+- **Dynamic Image Display Name** is the developer name for this entry, used in the settings of the component
 - **Image Config** is the actual set of layers to use in the component
   - Is a JSON Object Array, each JSON Object represents the layer and associated image to load into that layer
   - Can also leverage an archive, see example below (resource name if no archive, with archive you need a root '/' before path and name)

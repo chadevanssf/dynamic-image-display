@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Image List</label>
-    <pluralLabel>Images List</pluralLabel>
+    <label>Dynamic Image Display</label>
+    <pluralLabel>Dynamic Image Displays</pluralLabel>
     <visibility>Public</visibility>
     <fields>
         <fullName>Image_Config__c</fullName>
         <externalId>false</externalId>
-        <fieldManageability>SubscriberControlled</fieldManageability>
+        <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Image Config</label>
         <length>32768</length>
         <type>LongTextArea</type>

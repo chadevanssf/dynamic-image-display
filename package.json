@@ -1,0 +1,31 @@
+{
+  "name": "dynamic-image-display",
+  "version": "1.0.0",
+  "description": "Dynamic Image Display, helping Platform Events show Action",
+  "scripts": {
+    "build": "sfdx shane:org:delete; ./orgInit.sh",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "reset": "echo \"sfdx force:apex:execute -f scripts/delete.cls && sfdx force:apex:execute -f scripts/init.cls\""
+  },
+  "nodemonConfig": {
+    "watch": [
+      "force-app"
+    ],
+    "exec": "sfdx force:source:push",
+    "ext": "cls,xml,json,js,trigger,cmp,css,design,svg,html",
+    "delay": "2500"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadevanssf/dynamic-image-display.git"
+  },
+  "author": "Chad Evans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadevanssf/dynamic-image-display/issues"
+  },
+  "homepage": "https://github.com/chadevanssf/dynamic-image-display#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
