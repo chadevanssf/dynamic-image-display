@@ -4,12 +4,45 @@
     <pluralLabel>Dynamic Image Displays</pluralLabel>
     <visibility>Public</visibility>
     <fields>
-        <fullName>Image_Config__c</fullName>
+        <fullName>ArchiveName__c</fullName>
+        <description>Static Resource name that is a zip/archive. Empty means the image is directly stored in Static Resources.</description>
         <externalId>false</externalId>
-        <fieldManageability>DeveloperControlled</fieldManageability>
-        <label>Image Config</label>
-        <length>32768</length>
-        <type>LongTextArea</type>
-        <visibleLines>3</visibleLines>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>ArchiveName</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Group</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ImageName__c</fullName>
+        <description>Based on the Static Resource, direct is /image.png, inside an archive is combined with archivelocation + /image.png</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>ImageName</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LayerName__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>LayerName</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
 </CustomObject>

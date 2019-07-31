@@ -1,13 +1,6 @@
 ({
     doInit : function(component, event, helper) {
-        const fieldName = component.get("v.fieldName");
-        
-        var fieldNames = [];
-        fieldNames.push(fieldName);
-        
-        component.set("v.fieldNames", fieldNames);
-        
-        const empApi = component.find("empApi");
+        var empApi = component.find("empApi");
         if (empApi) {
             // Uncomment below line to enable debug logging (optional)
             empApi.setDebugFlag(true);
@@ -15,8 +8,8 @@
             empApi.onError($A.getCallback(function(error) {
                 console.error('EMP API error: ', error);
             }));
-            const channel = component.get("v.channel");
-            const replayId = -1;
+            var channel = component.get("v.channel");
+            var replayId = -1;
             empApi.subscribe(channel, replayId, $A.getCallback(function(eventReceived) {
                 var live = component.find("live");
                 
@@ -67,28 +60,26 @@
         
         var action = component.get("c.getConfig");
         action.setStorable();
-        action.setParams(
-            {
-                configName : component.get("v.configName")
-            }
-        );
+        var configName = component.get("v.configName");
+        action.setParams({
+            configName : configName
+        });
         action.setCallback(this, function(resp) {
             var state = resp.getState();
             if (state === "SUCCESS") {
-                var configValue = resp.getReturnValue();
-                if (configValue === "")
-                {
-                    $A.log("No Config found for: " + component.get("v.configName"));
-                } else {
-                    var config = JSON.parse(configValue);
+                var config = resp.getReturnValue();
+                if (config !== "") {
                     component.set("v.config", config);
                     
                     helper.addImages(component, config);
                     helper.updateStatus(component);
+                } else {
+                    console.log("No Config found for: " + component.get("v.configName"));
+                    $A.log("No Config found for: " + component.get("v.configName"));
                 }
             }  else if (state === "ERROR") {
+                console.log(resp.getError());
                 $A.log(resp.getError());
-                // eslint-disable-next-line
                 $A.reportError("DynamicImageDisplay", resp.getError());
             } //end if errors
         });

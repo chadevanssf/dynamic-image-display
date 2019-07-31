@@ -1,5 +1,5 @@
-public class DynamicImageListingCtrl {
-    
+public class DynamicImageListingCtrl
+{    
     @AuraEnabled
     public static List<SObject> getResults(String objectName, String fieldNames) 
     {
@@ -7,7 +7,8 @@ public class DynamicImageListingCtrl {
     }
     
     @AuraEnabled(cacheable=true)
-    public static List<ColumnInfo> getFieldTypes(string objectName, string fieldNames){
+    public static List<ColumnInfo> getFieldTypes(string objectName, string fieldNames)
+    {
        	String[] fields = fieldNames.split(',');
         List<ColumnInfo> results = new List<ColumnInfo>();
         

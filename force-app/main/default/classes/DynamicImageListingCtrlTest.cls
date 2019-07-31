@@ -1,10 +1,25 @@
 @isTest
-public class DynamicImageListingCtrlTest {
-    @isTest static void testGetResults() {
-        DynamicImageListingCtrl.getResults('Account', 'AccountSource');
+public class DynamicImageListingCtrlTest
+{
+    @isTest
+    static void testGetResults()
+    {
+        List<SObject> objs = DynamicImageListingCtrl.getResults('Account', 'AccountSource');
+        
+        System.assertNotEquals(null, objs);
     }
     
-    @testSetup static void testSetupCoreObjects() {
+    @isTest
+    static void testGetFieldTypes()
+    {
+        List<DynamicImageListingCtrl.ColumnInfo> cols = DynamicImageListingCtrl.getFieldTypes('Account', 'AccountSource');
+        
+        System.assertNotEquals(null, cols);
+    }
+    
+    @testSetup
+    static void testSetupCoreObjects()
+    {
         Account a = new Account();
         a.Name = 'Pizza King';
         insert a;

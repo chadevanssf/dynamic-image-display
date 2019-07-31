@@ -8,18 +8,31 @@
     <name>AuraDefinitionBundle</name>
     <members>DynamicImageDisplay</members>
     <members>DynamicImageListing</members>
+    <members>GenerateEvent_Button</members>
+    <members>GenerateEvent_ButtonList</members>
   </types>
   <types>
     <name>ApexClass</name>
     <members>DynamicImageDisplayController</members>
     <members>DynamicImageDisplayMDT</members>
+    <members>DynamicImageDisplayMDTTest</members>
     <members>DynamicImageDisplayTest</members>
     <members>DynamicImageListingCtrl</members>
     <members>DynamicImageListingCtrlTest</members>
+    <members>GenerateEventController</members>
+    <members>GenerateEventControllerTest</members>
+  </types>
+  <types>
+    <name>ContentAsset</name>
+    <members>app_logo_image</members>
   </types>
   <types>
     <name>CustomMetadata</name>
-    <members>Dynamic_Image_Display.TestConfig</members>
+    <members>Dynamic_Image_Display.TestConfig_Base</members>
+    <members>Dynamic_Image_Display.TestConfig_Left</members>
+    <members>Dynamic_Image_Display.TestConfig_Right</members>
+    <members>Events_Generator.Go_Left</members>
+    <members>Events_Generator.Go_RIght</members>
   </types>
   <types>
     <name>FlexiPage</name>
@@ -30,19 +43,26 @@
   <types>
     <name>Layout</name>
     <members>Dynamic_Image_Display__mdt-Dynamic Image Display Layout</members>
+    <members>Events_Generator__mdt-Events Generator Layout</members>
     <members>Image_Status_Detail__c-Image Status Detail Layout</members>
     <members>Image_Status__c-Image Status Layout</members>
   </types>
   <types>
     <name>CustomObject</name>
     <members>Dynamic_Image_Display__mdt</members>
+    <members>Events_Generator__mdt</members>
     <members>Image_Status_Detail__c</members>
     <members>Image_Status__c</members>
     <members>TestEvent__e</members>
   </types>
   <types>
     <name>CustomField</name>
-    <members>Dynamic_Image_Display__mdt.Image_Config__c</members>
+    <members>Dynamic_Image_Display__mdt.ArchiveName__c</members>
+    <members>Dynamic_Image_Display__mdt.Group__c</members>
+    <members>Dynamic_Image_Display__mdt.ImageName__c</members>
+    <members>Dynamic_Image_Display__mdt.LayerName__c</members>
+    <members>Events_Generator__mdt.Event_Data__c</members>
+    <members>Events_Generator__mdt.Group__c</members>
     <members>Image_Status_Detail__c.Image_Status__c</members>
     <members>Image_Status_Detail__c.Status__c</members>
     <members>Image_Status__c.Display_Status__c</members>

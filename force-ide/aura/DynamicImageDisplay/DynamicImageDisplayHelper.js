@@ -16,7 +16,7 @@
             
             var newSrc = "";
             if (archiveLocation && archiveLocation !== "") {
-                newSrc = $A.get('$Resource.' + archiveLocation) + imageLocation;
+                newSrc = $A.get('$Resource.' + archiveLocation) + "/" + imageLocation;
             } else {
                 newSrc = $A.get('$Resource.' + imageLocation);
             }
@@ -35,7 +35,9 @@
     updateStatus : function(component) {
         var currentStatus = component.get("v.currentStatus");
         if (currentStatus) {
-            var status = JSON.parse(currentStatus);
+            var pattern = "'";
+            var cleanStatus = currentStatus.replace(pattern, "\"");
+            var status = JSON.parse(cleanStatus);
             
             var images = component.find("allimages");
             var startPos = "layer_".length;

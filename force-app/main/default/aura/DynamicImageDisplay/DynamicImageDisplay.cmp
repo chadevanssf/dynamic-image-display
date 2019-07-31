@@ -2,14 +2,13 @@
     <!-- public -->
     <aura:attribute name="title" type="String" required="false" access="public" />
     <aura:attribute name="fieldName" type="String" default="ImageUrl__c" required="true" access="public" />
-    <aura:attribute name="configName" type="String" default="My_Config_Name" required="true" access="public" />
+    <aura:attribute name="configName" type="String" default="Test" required="true" access="public" />
     <aura:attribute name="channel" type="String" default="/event/MyEvent__e" required="true" access="public" />
     <aura:attribute name="payloadFieldName" type="String" default="Message__c" required="true" access="public" />
     <aura:attribute name="filterIdFieldName" type="String" default="AssetId__c" required="false" access="public" />
     <aura:attribute name="filterPayloadFieldName" type="String" default="AssetId__c" required="false" access="public" />
 
     <!-- private -->
-    <aura:attribute name="fieldNames" type="String[]" required="false" access="private" />
     <aura:attribute name="currentStatus" type="String" required="false" access="private" />
     <aura:attribute name="config" type="String" required="false" access="private" />
     <aura:attribute name="record" type="Object" description="The record object to be displayed" access="private"/>

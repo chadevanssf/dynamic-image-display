@@ -12,6 +12,25 @@
             </componentInstanceProperties>
             <componentName>DynamicImageListing</componentName>
         </componentInstances>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>baseIconName</name>
+                <value>utility:broadcast</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>eventName</name>
+                <value>TestEvent__e</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>mdtGroupName</name>
+                <value>TestEvent</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>title</name>
+                <value>Generate Platform Events</value>
+            </componentInstanceProperties>
+            <componentName>GenerateEvent_ButtonList</componentName>
+        </componentInstances>
         <name>column1</name>
         <type>Region</type>
     </flexiPageRegions>

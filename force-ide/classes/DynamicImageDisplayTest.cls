@@ -1,10 +1,11 @@
 @IsTest
-public class DynamicImageDisplayTest {
+public class DynamicImageDisplayTest
+{
     @isTest 
-    static void validateMDTInfo() 
+    static void validateMDTInfo()
     {
-        String s = DynamicImageDisplayController.getConfig('Test');
+        List<DynamicImageDisplayController.DisplayResult> drs = DynamicImageDisplayController.getConfig('TestConfig');
         
-        System.assertEquals('', s);
+        System.assertNotEquals(null, drs);
     }
 }

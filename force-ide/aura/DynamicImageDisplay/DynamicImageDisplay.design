@@ -1,6 +1,6 @@
 <design:component >
     <design:attribute name="title" label="Title" description="Title of the Component" />
-    <design:attribute name="configName" label="Metadata Type Entry" datasource="apex://DynamicImageDisplayMDT" description="Custom Metadata Type entry for the configuration of the images, under 'Dynamic Image Display' > 'Dynamic Image Display Name'" />
+    <design:attribute name="configName" label="Group Name in MDT" datasource="apex://DynamicImageDisplayMDT" description="Custom Metadata Type entry for the configuration of the images, under 'Dynamic Image Display' > 'Group'" />
     <design:attribute name="fieldName" label="Source Field Name" description="Used to initialize the image, data is of the form '{&quot;left&quot;:&quot;show&quot;,&quot;right&quot;:&quot;hide&quot;}'" />
     <design:attribute name="channel" label="Event Channel" description="Indicates the channel to listen to, somethign like '/event/MyEvent__e'" />
     <design:attribute name="payloadFieldName" label="Event Payload Field" description="Indicates the payload field for the Event, like 'Message__c'" />
