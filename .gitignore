@@ -2,14 +2,9 @@
 # If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
 # For useful gitignore templates see: https://github.com/github/gitignore
 
-# Cache directories
-.npm
-.vscode
-.DS_Store
-.classpath
-.sfdx
-.project
-.eslintcache
+# Salesforce cache
+.sfdx/
+.vscode/
 
 # Logs
 logs
@@ -19,7 +14,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Dependency directories
+.npm/
 node_modules/
+
+# Eslint cache
+.eslintcache
 
 # MacOS system files
 .DS_Store

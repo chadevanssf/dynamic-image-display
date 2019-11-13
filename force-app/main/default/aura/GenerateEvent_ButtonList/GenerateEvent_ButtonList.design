@@ -1,7 +1,0 @@
-<design:component >
-    <design:attribute name="eventName" label="Event Name" description="Event Name for publishing" />
-    <design:attribute name="title" label="List Title" description="Title of the List of Buttons" />
-    <design:attribute name="baseIconName" label="Button Icon" description="Icon used for buttons, in the form of utility:broadcast" />
-    <design:attribute name="mdtGroupName" label="Metadata Type Group" description="Group filter for Metadata Type entries" />
-    <design:attribute name="showMessage" label="Show Message" description="Show a message/toast when event succesfully sent" />
-</design:component>

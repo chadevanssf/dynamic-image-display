@@ -9,7 +9,8 @@
   },
   "nodemonConfig": {
     "watch": [
-      "force-app"
+      "lightning-components",
+      "test-app"
     ],
     "exec": "sfdx force:source:push",
     "ext": "cls,xml,json,js,trigger,cmp,css,design,svg,html",

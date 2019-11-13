@@ -6,4 +6,4 @@ delete-scratch-org: false
 show-scratch-org-url: true
 data-plans:
   - ./data/Image_Status__c-Image_Status_Detail__c-plan.json
-open-path: one/one.app#/n/Dynamic_Image_List
+open-path: lightning/n/Dynamic_Image_List

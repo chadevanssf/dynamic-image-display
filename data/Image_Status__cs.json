@@ -5,14 +5,21 @@
                 "type": "Image_Status__c",
                 "referenceId": "Image_Status__cRef1"
             },
-            "Display_Status__c": "{ \"left\": \"show\", \"right\": \"hide\" }"
+            "Display_Status__c": "ball right"
         },
         {
             "attributes": {
                 "type": "Image_Status__c",
                 "referenceId": "Image_Status__cRef2"
             },
-            "Display_Status__c": "{ \"left\": \"hide\", \"right\": \"show\" }"
+            "Display_Status__c": "ball left"
+        },
+        {
+            "attributes": {
+                "type": "Image_Status__c",
+                "referenceId": "Image_Status__cRef3"
+            },
+            "Display_Status__c": "ball left;ball right"
         }
     ]
 }

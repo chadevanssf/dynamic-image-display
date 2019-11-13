@@ -1,0 +1,12 @@
+<aura:component>
+    <aura:attribute name="newid" type="String" access="public" />
+    <aura:attribute name="class" type="String" access="public" />
+    <aura:attribute name="src" type="String" access="public" />
+    
+    <aura:method name="calculateVisibility" action="{!c.calcVisibility}">
+        <aura:attribute name="compare" type="List"/>
+    </aura:method>
+    
+    
+    <img aura:id="imglayer" class="{!v.class}" src="{!v.src}"/>
+</aura:component>
