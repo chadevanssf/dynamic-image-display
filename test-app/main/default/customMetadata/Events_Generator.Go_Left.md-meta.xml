@@ -5,7 +5,7 @@
     <values>
         <field>Event_Data__c</field>
         <value xsi:type="xsd:string">{
-&quot;Message__c&quot;:&quot;left&quot;
+&quot;Message__c&quot;:&quot;ball left&quot;
 }</value>
     </values>
     <values>
