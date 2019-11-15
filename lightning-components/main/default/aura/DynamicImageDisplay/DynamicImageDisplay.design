@@ -1,4 +1,4 @@
-<design:component >
+<design:component label="Dynamic Image Display">
     <design:attribute name="title"
                       label="Title"
                       description="Title of the Component" />
