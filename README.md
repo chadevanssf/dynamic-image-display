@@ -87,4 +87,10 @@ sfdx force:data:tree:import -p ./data/Image_Status__c-Image_Status_Detail__c-pla
 sfdx force:data:tree:export -q ./data/imagestatus.soql -p -d ./data/
 ```
 
+### Other commands
+
+```bash
+sfdx force:source:deploy -p lightning-components/ -u c25did
+```
+
 ## Resources

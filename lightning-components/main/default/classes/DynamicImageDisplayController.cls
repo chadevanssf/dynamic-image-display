@@ -4,10 +4,7 @@ global with sharing class DynamicImageDisplayController
     public static List<DisplayResult> getConfig(String configName)
     {
         List<DisplayResult> drs = new List<DisplayResult>();
-        List<Dynamic_Image_Display__mdt> recs = [SELECT Id, DeveloperName, LayerName__c, ArchiveName__c, ImageName__c
-                                                 FROM Dynamic_Image_Display__mdt
-                                                 WHERE Group__c = :configName
-                                                 ORDER BY DeveloperName];
+        List<Dynamic_Image_Display__mdt> recs = DynamicImageDisplayConfig.getAllByGroupDID(configName);
         
         String retVal = '';
         for (Dynamic_Image_Display__mdt rec : recs)

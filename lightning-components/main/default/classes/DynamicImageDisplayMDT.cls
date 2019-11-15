@@ -16,20 +16,12 @@ global with sharing class DynamicImageDisplayMDT extends VisualEditor.DynamicPic
     }
     global static VisualEditor.DynamicPickListRows getStaticValues()
     {
-        List<String> items = new List<String>();
-        Dynamic_Image_Display__mdt[] mdtItems = [SELECT Group__c FROM Dynamic_Image_Display__mdt];
+        List<String> items = DynamicImageDisplayConfig.getGroupsDID();
         
         VisualEditor.DynamicPickListRows values = new VisualEditor.DynamicPickListRows();
         
         values.addRow(getStaticDefaultValue());
-        
-        for (Dynamic_Image_Display__mdt mdtItem : mdtItems) {
-            String str = mdtItem.Group__c;
-            if (!items.contains(str)) {
-                items.add(str);
-            }
-        }
-        
+                
         for(String item : items) {
             VisualEditor.DataRow veRow = new VisualEditor.DataRow(item, item);
             values.addRow(veRow);
